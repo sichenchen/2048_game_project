@@ -14,7 +14,7 @@ def main():
     while keep_going:
       print("w: Move up, s: Move down, a: Move left, d: Move right")
       ans = input("Please enter your move(w/s/a/d): ").lower()
-      try:
+      try: # Check input and follow the instructions to run the function
         if ans == "w":
           grid = gf.move_up(grid)
           
@@ -34,7 +34,7 @@ def main():
         print("Invalid input. Please enter 'w', 's', 'a', or 'd'.")
         continue
       
-      Result = gf.check_win(grid)
+      Result = gf.check_win(grid) #check if achieve 2048
       if Result == True:
         print("Congraduation! You've won the game")
         while True:
@@ -54,7 +54,7 @@ def main():
             print("Thanks for playing!")
             break
       
-      lose = gf.check_lose(grid, prev)
+      lose = gf.check_lose(grid, prev) #check if it is dead
       if lose == True:
         print("Game Over")
         while True
